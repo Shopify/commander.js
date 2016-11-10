@@ -73,7 +73,7 @@ program
   .option('-l, --list <items>', 'A list', list)
   .option('-o, --optional [value]', 'An optional value')
   .option('-c, --collect [value]', 'A repeatable value', collect, [])
-  .option('-v, --verbose', 'A value that can be increased', increaseVerbosity, 0)
+  .option('-b, --verbose', 'A value that can be increased', increaseVerbosity, 0)
   .parse(process.argv);
 
 console.log(' int: %j', program.integer);
@@ -94,7 +94,7 @@ program
   .option('-s --size <size>', 'Pizza size', /^(large|medium|small)$/i, 'medium')
   .option('-d --drink [drink]', 'Drink', /^(coke|pepsi|izze)$/i)
   .parse(process.argv);
-  
+
 console.log(' size: %j', program.size);
 console.log(' drink: %j', program.drink);
 ```
@@ -169,7 +169,7 @@ program
   .parse(process.argv);
 ```
 
- 当说明参数调用 `.command()` 时，没有 `.action(callback)` 应调用来处理子命令，否则会出错。这告诉 commander，你要使用单独的可执行文件的子命令，就像 `git(1)` 和其他流行工具一样。 
+ 当说明参数调用 `.command()` 时，没有 `.action(callback)` 应调用来处理子命令，否则会出错。这告诉 commander，你要使用单独的可执行文件的子命令，就像 `git(1)` 和其他流行工具一样。
  Commander 将尝试在入口脚本的目录中搜索可执行文件，（像 `./examples/pm`）与名称 `program-command`，像 `pm-install`，`pm-search`。
 
  对 `.command()` 的调用，可以传递选项。指定 `opts.noHelp` 为 `true` 将从生成的帮助输出中删除选项。如果没有其他子命令指定，指定 `opts.isDefault` 为 `true` 将运行子命令。
@@ -196,7 +196,7 @@ program
    Options:
 
      -h, --help           output usage information
-     -V, --version        output the version number
+     -v, --version        output the version number
      -p, --peppers        Add peppers
      -P, --pineapple      Add pineapple
      -b, --bbq            Add bbq sauce
@@ -249,7 +249,7 @@ Usage: custom-help [options]
 Options:
 
   -h, --help     output usage information
-  -V, --version  output the version number
+  -v, --version  output the version number
   -f, --foo      enable some foo
   -b, --bar      enable some bar
   -B, --baz      enable some baz
@@ -340,4 +340,3 @@ program.parse(process.argv);
 ## 许可证
 
 MIT
-

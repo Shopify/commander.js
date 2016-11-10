@@ -74,7 +74,7 @@ program
   .option('-l, --list <items>', 'A list', list)
   .option('-o, --optional [value]', 'An optional value')
   .option('-c, --collect [value]', 'A repeatable value', collect, [])
-  .option('-v, --verbose', 'A value that can be increased', increaseVerbosity, 0)
+  .option('-b, --verbose', 'A value that can be increased', increaseVerbosity, 0)
   .parse(process.argv);
 
 console.log(' int: %j', program.integer);
@@ -95,7 +95,7 @@ program
   .option('-s --size <size>', 'Pizza size', /^(large|medium|small)$/i, 'medium')
   .option('-d --drink [drink]', 'Drink', /^(coke|pepsi|izze)$/i)
   .parse(process.argv);
-  
+
 console.log(' size: %j', program.size);
 console.log(' drink: %j', program.drink);
 ```
@@ -199,7 +199,7 @@ You can enable `--harmony` option in two ways:
    Options:
 
      -h, --help           output usage information
-     -V, --version        output the version number
+     -v, --version        output the version number
      -p, --peppers        Add peppers
      -P, --pineapple      Add pineapple
      -b, --bbq            Add bbq sauce
@@ -257,7 +257,7 @@ Usage: custom-help [options]
 Options:
 
   -h, --help     output usage information
-  -V, --version  output the version number
+  -v, --version  output the version number
   -f, --foo      enable some foo
   -b, --bar      enable some bar
   -B, --baz      enable some baz
@@ -349,4 +349,3 @@ More Demos can be found in the [examples](https://github.com/tj/commander.js/tre
 ## License
 
 MIT
-

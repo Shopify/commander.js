@@ -1,3 +1,7 @@
+2.9.1 / 2016-11-10
+==================
+
+  * Change `-V, --version` to `-v, --version`
 
 2.9.0 / 2015-10-13
 ==================
@@ -210,7 +214,7 @@
 0.3.1 / 2011-10-31
 ==================
 
-  * Changed `--version` short flag to `-V` from `-v`
+  * Changed `--version` short flag to `-v` from `-v`
   * Changed `.version()` so it's configurable [felixge]
 
 0.3.0 / 2011-10-31

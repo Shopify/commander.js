@@ -32,7 +32,7 @@ program
   .option('-l, --list <items>', 'A list', list)
   .option('-o, --optional [value]', 'An optional value')
   .option('-c, --collect [value]', 'A repeatable value', collect, [])
-  .option('-v, --verbose', 'A value that can be increased', increaseVerbosity, 0)
+  .option('-b, --verbose', 'A value that can be increased', increaseVerbosity, 0)
   .parse(process.argv);
 
 console.log(' int: %j', program.integer);
