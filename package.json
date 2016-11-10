@@ -1,5 +1,5 @@
 {
-  "name": "commander",
+  "name": "@shopify/commander",
   "version": "2.9.1",
   "description": "the complete solution for node.js command-line programs",
   "keywords": [
