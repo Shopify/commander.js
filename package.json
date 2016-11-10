@@ -1,6 +1,6 @@
 {
   "name": "commander",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "description": "the complete solution for node.js command-line programs",
   "keywords": [
     "commander",
@@ -8,11 +8,11 @@
     "option",
     "parser"
   ],
-  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "author": "Shopify Inc.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tj/commander.js.git"
+    "url": "https://github.com/Shopify/commander.js.git"
   },
   "devDependencies": {
     "should": ">= 0.0.1 <9.0.0",

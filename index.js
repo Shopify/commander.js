@@ -819,7 +819,7 @@ Command.prototype.variadicArgNotLast = function(name) {
 /**
  * Set the program version to `str`.
  *
- * This method auto-registers the "-V, --version" flag
+ * This method auto-registers the "-v, --version" flag
  * which will print the version number when passed.
  *
  * @param {String} str
@@ -831,7 +831,7 @@ Command.prototype.variadicArgNotLast = function(name) {
 Command.prototype.version = function(str, flags) {
   if (0 == arguments.length) return this._version;
   this._version = str;
-  flags = flags || '-V, --version';
+  flags = flags || '-v, --version';
   this.option(flags, 'output the version number');
   this.on('version', function() {
     process.stdout.write(str + '\n');
