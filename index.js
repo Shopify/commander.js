@@ -887,8 +887,8 @@ Command.prototype.usage = function(str) {
     return humanReadableArgName(arg);
   });
 
-  var usage = '[options]'
-    + (this.commands.length ? ' [command]' : '')
+  var usage = (this.commands.length ? '[command]' : '')
+    + ' [options] '
     + (this._args.length ? ' ' + args.join(' ') : '');
 
   if (0 == arguments.length) return this._usage || usage;
@@ -1002,6 +1002,7 @@ Command.prototype.helpInformation = function() {
   if (this._alias) {
     cmdName = cmdName + '|' + this._alias;
   }
+
   var usage = [
     ''
     ,'  Usage: ' + cmdName + ' ' + this.usage()
@@ -1034,13 +1035,18 @@ Command.prototype.helpInformation = function() {
  */
 
 Command.prototype.outputHelp = function(cb) {
+  this.emit('--helpStart');
+
   if (!cb) {
     cb = function(passthru) {
       return passthru;
     }
   }
+
   process.stdout.write(cb(this.helpInformation()));
+
   this.emit('--help');
+  this.emit('--helpEnd');
 };
 
 /**
@@ -1126,4 +1132,3 @@ function exists(file) {
     return false;
   }
 }
-
