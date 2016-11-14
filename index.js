@@ -959,7 +959,7 @@ Command.prototype.commandHelp = function() {
 
     return [
       cmd._name
-        + (cmd._alias ? '|' + cmd._alias : '')
+        + (cmd._alias ? ' | ' + cmd._alias : '')
         + (cmd.options.length ? ' [options]' : '')
         + ' ' + args
       , cmd._description
@@ -1000,7 +1000,7 @@ Command.prototype.helpInformation = function() {
 
   var cmdName = this._name;
   if (this._alias) {
-    cmdName = cmdName + '|' + this._alias;
+    cmdName = cmdName + ' | ' + this._alias;
   }
 
   var usage = [
